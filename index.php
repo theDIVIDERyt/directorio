@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Directorio</title>
     <link rel="stylesheet" type="text/css" href="estilos.css">
-    <script src="https://kit.fontawesome.com/5637dd924f.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/ca54c6a2be.js" crossorigin="anonymous"></script>
     <script src="./scripts.js"></script>
 </head>
 
@@ -92,6 +92,7 @@
                 echo '<div id="r1">Seleccione una letra o realize una búsqueda para desplegar los registros del directorio</div>';
             }
             ?>
+
         </div>
 
         <div class="contenedorRegistro" id="registro">
@@ -142,40 +143,52 @@
 
     <div class="modal" id="modal">
         <div class="modal-bg">
-            <div class="modal-container">
-                <button type="button" onclick="cerrarNuevoContacto()">Cerrar modal</button>
+            <form method="post">
+                <div class="modal-container">
+                    <div class="cerrar">
+                        <button type="button" onclick="cerrarNuevoContacto()" class="botonCerrarForm"><i class="fas fa-window-close"></i></button>
+                    </div>
+                    <h2 class="nuevoRegistro">Ingreso Nuevo Registro</h2>
+                    <div class="iconoForm"><i class="fas fa-user"></i></div>
+                    <p class="campo">
+                        <label for="first_name"></label><br>
+                        <input class="celda" id="nombre" name="first_name" placeholder="Nombre" type="text">
+                    </p>
+                    <div class="iconoForm"><i class="fas fa-user"></i></div>
+                    <p class="campo">
+                        <label for="last_name"></label><br>
+                        <input class="celda" id="apellido" name="last_name" placeholder="Apellido" type="text">
+                    </p>
+                    <div class="iconoForm"><i class="fas fa-building"></i></div>
+                    <p class="campo">
+                        <label for="empresa"></label><br>
+                        <input class="celda" id="empresa" name="empresa" placeholder="Empresa" type="text">
+                    </p>
+                    <div class="iconoForm"><i class="fas fa-envelope"></i></div>
+                    <p class="campo">
+                        <label for="email"></label><br>
+                        <input class="celda" id="email" name="email" placeholder="E-mail" type="text">
+                    </p>
+                    <div class="iconoForm"><i class="fas fa-phone"></i></div>
+                    <p class="campo">
+                        <label for="telephone"></label><br>
+                        <input class="celda" id="telefono" name="telephone" placeholder="Teléfono" type="number">
+                    </p>
+                    <div class="iconoForm"><i class="fas fa-comment"></i></div>
+                    <p class="campo">
+                        <label for="comments"></label><br>
+                        <textarea class="celdaComentarios" name="comments" maxlength="500" cols="40" rows="5"></textarea>
+                    </p>
+                    <input type="button" class="ingresar" onclick="validarFormulario()" value="Ingresar">
+            </form>
+            <ul class="mensajeError" id="msj">
 
-                <body>
-                    <form>
-                        <fieldset>
-                            <legend>Ingresa tus datos</legend>
-                            <p>
-                                <label for="first_name">Nombre: *</label>
-                                <input name="first_name" type="text" required placeholder="Ingresa tu nombre">
-                            </p>
-                            <p>
-                                <label for="last_name">Apellido: *</label>
-                                <input name="last_name" type="text" required placeholder="Ingresa tu apellido">
-                            </p>
-                            <p>
-                                <label for="email">Dirección de E-mail: *</label>
-                                <input name="email" type="email" required placeholder="Ingresa tu correo">
-                            </p>
-                            <p>
-                                <label for="telefono">Número de teléfono:</label>
-                                <input name="telefono" type="number" required placeholder="Ingresa tu número telefónico">
-                            </p>
-                        </fieldset>
-                    </form>
-            </div>
+            </ul>
         </div>
     </div>
+    </div>
 
-    <?php
-    if (isset($_REQUEST["id"])) {
-        echo '<script language="javascript">abrirNuevoContacto()</script>';
-    }
-    ?>
+
 
 </body>
 
