@@ -21,6 +21,7 @@ function abrirNuevoContacto() {
 }
 
 function cerrarNuevoContacto() {
+
     document.getElementById("modal").style.display = "none";
 }
 
